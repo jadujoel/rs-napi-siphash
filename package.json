@@ -11,9 +11,10 @@
   "scripts": {
     "build": "napi build --release --platform",
     "build:debug": "napi build --platform",
-    "prepublishOnly": "napi prepublish -t npm",
+    "prepublishOnly": "napi prepublish -t npm --skip-gh-release",
     "artifacts": "napi artifacts",
-    "version": "napi version"
+    "version": "napi version",
+    "test:e2e": "npm run build && cd smoke && npm install && npx bun run index.ts"
   },
   "napi": {
     "binaryName": "siphash-napi",
