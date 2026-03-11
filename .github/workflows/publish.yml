@@ -99,7 +99,7 @@ jobs:
       - name: Publish packages
         run: |
           npm config set provenance true
-          npx napi pre-publish -t npm --skip-gh-release
+          npx napi pre-publish -t npm
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
