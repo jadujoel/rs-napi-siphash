@@ -92,12 +92,14 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           path: artifacts
+      - name: Create npm dirs
+        run: npx napi create-npm-dirs
       - name: Move artifacts
         run: npx napi artifacts -d artifacts
       - name: Publish packages
         run: |
           npm config set provenance true
-          npx napi prepublish -t npm --skip-gh-release
+          npx napi pre-publish -t npm --skip-gh-release
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
