@@ -1,6 +1,6 @@
 {
   "name": "@jadujoel/siphash-napi",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "SipHash-2-4 via Rust napi-rs bindings",
   "main": "index.js",
   "types": "index.d.ts",
