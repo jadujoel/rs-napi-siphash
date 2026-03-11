@@ -2,6 +2,10 @@
   "name": "@jadujoel/siphash-napi",
   "version": "0.1.4",
   "description": "SipHash-2-4 via Rust napi-rs bindings",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jadujoel/rs-napi-siphash"
+  },
   "main": "index.js",
   "types": "index.d.ts",
   "files": [

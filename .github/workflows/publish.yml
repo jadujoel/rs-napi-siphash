@@ -102,6 +102,7 @@ jobs:
       - name: Publish platform packages
         run: |
           npm config set access public
+          npm config set provenance false
           npx napi pre-publish -t npm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
