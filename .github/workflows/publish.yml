@@ -99,6 +99,7 @@ jobs:
       - name: Publish packages
         run: |
           npm config set provenance true
+          npm config set access public
           npx napi pre-publish -t npm
           npm publish --access public
         env:
