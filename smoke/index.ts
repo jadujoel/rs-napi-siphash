@@ -1,4 +1,4 @@
-import { siphash, siphashWithKey, siphashFile } from "siphash-napi";
+import { siphash, siphashWithKey, siphashFile } from "@jadujoel/siphash-napi";
 import { writeFileSync, unlinkSync } from "fs";
 
 let passed = 0;
