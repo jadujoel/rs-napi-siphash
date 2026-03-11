@@ -93,7 +93,7 @@ jobs:
         with:
           path: artifacts
       - name: Move artifacts
-        run: npx napi artifacts --dir artifacts
+        run: npx napi artifacts -d artifacts
       - name: Publish packages
         run: |
           npm config set provenance true

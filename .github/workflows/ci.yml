@@ -93,7 +93,7 @@ jobs:
         with:
           path: artifacts
       - name: Move artifacts
-        run: npx napi artifacts --dir artifacts
+        run: npx napi artifacts -d artifacts
         shell: bash
       - name: Quick smoke test
         run: node -e "const s = require('./index'); console.log(s.siphash(Buffer.from('hello')))"
