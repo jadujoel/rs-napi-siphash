@@ -96,11 +96,15 @@ jobs:
         run: npx napi create-npm-dirs
       - name: Move artifacts
         run: npx napi artifacts -d artifacts
-      - name: Publish packages
+      - name: Publish platform packages
         run: |
           npm config set provenance true
           npm config set access public
           npx napi pre-publish -t npm
-          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish main package
+        run: npm publish --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
